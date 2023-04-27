@@ -1,0 +1,249 @@
+.footer {
+    padding: 150px 0 20px;
+    background-color: #130C3A;
+    position: relative;
+
+    @include a (tablet-xl) {
+        padding: 100px 0 20px;
+    }
+
+    &__title {
+        font-family: 'Circular Std', sans-serif;
+        font-size: 72px;
+        line-height: 85px;
+        font-weight: 900;
+        color: $light-color;
+        text-align: center;
+        max-width: 639px;
+        width: 100%;
+        margin: 0 auto 40px;
+
+        @include a (tablet-xl) {
+            font-size: 50px;
+        }
+
+        @include a (tablet) {
+            font-size: 40px;
+            line-height: 50px;
+        }
+
+        @include a (mobile) {
+            font-size: 24px;
+        }
+
+        &-sml {
+            font-family: 'Circular Std', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: $light-color;
+            margin-bottom: 19px;
+
+            @include a (tablet-xl) {
+                font-size: 18px;
+            }
+
+            @include a (tablet) {
+                font-size: 16px;
+            }
+
+            @include a (mobile) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &__form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 150px;
+
+        @include a (tablet-xl) {
+            margin-bottom: 100px;
+        }
+
+        @include a (mobile) {
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__input {
+        max-width: 500px;
+        width: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-right: none;
+        border-radius: 10px 0px 0px 10px;
+        height: 80px;
+        background-color: transparent;
+        padding-left: 30px;
+
+        @include a (tablet) {
+            max-width: 400px;
+            height: 60px;
+        }
+
+        @include a (mobile) {
+            max-width: 200px;
+            height: 50px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        &::placeholder {
+            font-size: 22px;
+            color: #C1C1C1;
+
+            @include a (tablet-xl) {
+                font-size: 16px;
+            }
+
+            @include a (mobile) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &__btn {
+        font-size: 22px;
+        color: $light-color;
+        background-color: $main-color;
+        text-align: center;
+        width: 221px;
+        line-height: 80px;
+        border-radius: 0px 10px 10px 0px;
+
+        @include a (tablet) {
+            width: 180px;
+            line-height: 60px;
+            font-size: 16px;
+        }
+
+        @include a (mobile) {
+            font-size: 14px;
+            width: 200px;
+            line-height: 50px;
+            border-radius: 10px;
+        }
+    }
+
+    &-wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        place-items: center;
+
+        @include a (tablet-xl) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        @include a (mobile) {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+    }
+
+    &__logo {
+        margin-bottom: 33px;
+
+        @include a (mobile) {
+            scale: (0.9);
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 27px;
+    }
+
+    &__item {
+        color: #7884A6;
+
+        @include a (tablet-xl) {
+            font-size: 14px;
+        }
+
+        @include a (tablet) {
+            font-size: 12px;
+        }
+
+        @include a (mobile) {
+            font-size: 10px;
+        }
+
+        &-link {
+            color: #7884A6;
+
+            &:hover {
+                color: $main-color;
+                transition: .5s all ease-in-out;
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @include a (mobile) {
+            justify-content: center;
+        }
+    }
+
+    &__bg {
+        &-point {
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            @include a (tablet-xl) {
+                display: none;
+            }
+        }
+
+        &-circle {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            @include a (tablet-xl) {
+                display: none;
+            }
+
+            &-sml {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+
+                @include a (tablet-xl) {
+                    display: none;
+                }
+            }
+
+            &-b {
+                position: absolute;
+                top: 0;
+                right: 307px;
+
+                @include a (tablet-xl) {
+                    display: none;
+                }
+            }
+
+            &-y {
+                position: absolute;
+                top: 20px;
+                left: 212px;
+
+                @include a (tablet-xl) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,204 @@
+.reviews {
+    padding: 150px 0;
+    background-color: #F8F8FA;
+
+    @include a (tablet-xl) {
+        padding: 100px 0;
+    }
+
+    @include a (tablet) {
+        padding: 50px 0;
+    }
+
+    &__span {
+        display: block;
+        text-align: center;
+        color: #5B5E6D;
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        font-family: 'Circular Std', sans-serif;
+        font-size: 72px;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 70px;
+
+        @include a (tablet-xl) {
+            font-size: 50px;
+        }
+
+        @include a (tablet) {
+            font-size: 40px;
+        }
+
+        @include a (mobile) {
+            font-size: 24px;
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(320px, 420px));
+        gap: 30px;
+        justify-content: center;
+
+        @include a (laptop) {
+            grid-template-columns: repeat(2, minmax(320px, 420px));
+        }
+
+        @include a (tablet) {
+            grid-template-columns: minmax(320px, 420px);
+        }
+    }
+
+    &__item {
+        min-height: 370px;
+        background-color: $light-color;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+
+        @include a (tablet) {
+            min-height: 300px;
+        }
+
+        @include a (mobile) {
+            min-height: 250px;
+        }
+
+        &-wrap {
+            padding-left: 55px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            margin-bottom: 15px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 45px;
+                height: 45px;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &-1::before {
+                background: url(../../assets/images/reviews-item-1.png);
+            }
+
+            &-2::before {
+                background: url(../../assets/images/reviews-item-2.png);
+            }
+
+            &-3::before {
+                background: url(../../assets/images/reviews-item-3.png);
+            }
+
+            &-4::before {
+                background: url(../../assets/images/reviews-item-4.png);
+            }
+
+            &-5::before {
+                background: url(../../assets/images/reviews-item-5.png);
+            }
+
+            &-6::before {
+                background: url(../../assets/images/reviews-item-6.png);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                background: url(../../assets/images/reviews-twitter-icon.png);
+                width: 25px;
+                height: 21px;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+
+                @include a (tablet) {
+                    scale: (0.8);
+                }
+            }
+        }
+
+        &-name {
+            font-family: 'Circular Std', sans-serif;
+            font-weight: 500;
+
+            @include a (tablet-xl) {
+                font-size: 14px;
+            }
+
+            @include a (tablet) {
+                font-size: 12px;
+            }
+
+            @include a (mobile) {
+                font-size: 10px;
+            }
+
+            &-confirm {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background: url(../../assets/images/reviews-confirm-icon.jpg);
+                    width: 15px;
+                    height: 16px;
+                    right: 225px;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    @include a (tablet-xl) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &-nickname {
+            color: #596068;
+
+            @include a (tablet-xl) {
+                font-size: 14px;
+            }
+
+            @include a (tablet) {
+                font-size: 12px;
+            }
+
+            @include a (mobile) {
+                font-size: 10px;
+            }
+        }
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding-right: 20px;
+        }
+
+        &-descr {
+            font-size: 14px;
+            line-height: 24px;
+
+            @include a (tablet-xl) {
+                font-size: 12px;
+            }
+
+            @include a (tablet) {
+                font-size: 10px;
+            }
+
+            @include a (mobile) {
+                font-size: 8px;
+            }
+        }
+    }
+}

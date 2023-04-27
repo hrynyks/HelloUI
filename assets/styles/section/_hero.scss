@@ -1,0 +1,167 @@
+.hero {
+    padding: 118px 0 0;
+
+    @include a (tablet-xl) {
+        padding: 50px 0;
+    }
+
+    &-wrap {
+        padding-bottom: 150px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include a (tablet-xl) {
+            padding-bottom: 75px;
+        }
+    }
+
+    &__title {
+        font-family: 'Circular Std', sans-serif;
+        font-size: 96px;
+        line-height: 120px;
+        font-weight: 900;
+        text-align: center;
+        max-width: 950px;
+        width: 100%;
+        margin-bottom: 35px;
+
+        @include a (tablet-xl) {
+            font-size: 55px;
+            line-height: 80px;
+        }
+
+        @include a (tablet) {
+            font-size: 40px;
+            line-height: 50px;
+            margin-bottom: 20px;
+        }
+
+        @include a (mobile) {
+            font-size: 28px;
+            line-height: 30px;
+        }
+    }
+
+    &__descr {
+        font-size: 22px;
+        line-height: 32px;
+        color: #5B5E6D;
+        text-align: center;
+        max-width: 630px;
+        width: 100%;
+        margin-bottom: 40px;
+
+        @include a (tablet-xl) {
+            font-size: 18px;
+            line-height: 26px;
+        }
+
+        @include a (tablet) {
+            font-size: 16px;
+            line-height: 22px;
+
+        }
+
+        @include a (mobile) {
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @include a (tablet) {
+            flex-direction: column;
+        }
+    }
+
+    &__btn {
+
+        font-size: 20px;
+        font-weight: 500;
+        color: $main-color;
+        background-color: $light-color;
+        text-align: center;
+        box-shadow: 0px 10px 40px rgba(176, 201, 253, 0.3);
+        border-radius: 30px;
+        width: 251px;
+        line-height: 60px;
+
+        &:hover {
+            background-color: $main-color;
+            color: $light-color;
+            transition: .5s all ease-in-out;
+
+        }
+
+        @include a (tablet) {
+            width: 170px;
+            font-size: 16px;
+            line-height: 40px;
+        }
+
+        @include a (mobile) {
+            font-size: 12px;
+            width: 120px;
+            line-height: 30px;
+        }
+    }
+
+    &__image {
+        position: relative;
+    }
+
+    &__bg {
+        &-left {
+            position: absolute;
+            left: -65px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include a (laptop) {
+                display: none;
+            }
+        }
+
+        &-right {
+            position: absolute;
+            right: -130px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include a (laptop) {
+                display: none;
+            }
+        }
+    }
+
+    &__span {
+        color: #5B5E6D;
+        margin-bottom: 30px;
+    }
+
+    &__items {
+        display: grid;
+        justify-content: center;
+        place-items: center;
+        grid-template-columns: repeat(6, 1fr);
+
+        @include a (tablet-xl) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        @include a (tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include a (mobile) {
+            grid-template-columns: 1fr;
+        }
+    }
+}

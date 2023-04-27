@@ -1,0 +1,260 @@
+.header {
+    padding-top: 31px;
+
+    &__logo {
+        @include a (tablet) {
+            scale: (0.8);
+        }
+    }
+
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__nav {
+        display: flex;
+        gap: 120px;
+
+        @include a (tablet-xl) {
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-x: hidden;
+            height: 100vh;
+            max-width: 250px;
+            transform: translateX(-150vw);
+            width: 90%;
+            overflow-y: auto;
+            gap: 5px;
+
+            padding: 15px;
+            background-color: $main-color;
+            z-index: 100;
+        }
+    }
+
+    &__items {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        @include a (tablet-xl) {
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__item {
+        &-link {
+            color: $dark-color;
+
+            @include a (tablet-xl) {
+                color: #fff;
+                font-size: 14px;
+            }
+
+            @include a (tablet) {
+                font-size: 12px;
+            }
+
+            &:hover {
+                color: $main-color;
+                transition: .5s all ease-in-out;
+
+
+                @include a (tablet-xl) {
+                    color: $dark-color;
+                }
+            }
+        }
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+
+        @include a (tablet-xl) {
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+        }
+    }
+
+    &__btn {
+        &-left {
+            font-size: 18px;
+            color: $dark-color;
+
+            @include a (tablet-xl) {
+                color: #fff;
+                font-size: 10px;
+            }
+
+            &:hover {
+                color: $main-color;
+                transition: .5s all ease-in-out;
+
+                @include a (tablet-xl) {
+                    color: $dark-color;
+                }
+            }
+        }
+
+        &-right {
+            font-size: 18px;
+            font-weight: 500;
+            color: $light-color;
+            text-align: center;
+            width: 180px;
+            line-height: 50px;
+            background-color: $main-color;
+            border-radius: 30px;
+
+            @include a (tablet-xl) {
+                font-size: 10px;
+                width: unset;
+                line-height: unset;
+            }
+
+            &:hover {
+                color: $dark-color;
+                transition: .5s all ease-in-out;
+
+                @include a (tablet-xl) {
+                    color: $dark-color;
+                }
+            }
+        }
+    }
+}
+
+
+.header__nav.active {
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hamburger {
+    padding: 15px 15px;
+    display: none;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+
+    @include a (tablet-xl) {
+        display: block;
+    }
+
+    @include a (tablet) {
+        scale: (0.9);
+    }
+}
+
+.hamburger:hover {
+    opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+    opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: #000;
+}
+
+.hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -10px;
+}
+
+.hamburger-inner::after {
+    bottom: -10px;
+}
+
+/*
+     * 3DX
+     */
+.hamburger--3dx .hamburger-box {
+    perspective: 80px;
+}
+
+.hamburger--3dx .hamburger-inner {
+    transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1), background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dx .hamburger-inner::before,
+.hamburger--3dx .hamburger-inner::after {
+    transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dx.is-active .hamburger-inner {
+    background-color: transparent !important;
+    transform: rotateY(180deg);
+}
+
+.hamburger--3dx.is-active .hamburger-inner::before {
+    transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--3dx.is-active .hamburger-inner::after {
+    transform: translate3d(0, -10px, 0) rotate(-45deg);
+}
